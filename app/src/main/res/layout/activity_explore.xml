@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer_layout"
+    android:layout_height="match_parent"
+    tools:context=".Explore">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/main_toolbar"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".SongsFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView"
+            android:background="@color/white"
+            />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:layout_gravity="start"
+        >
+        <include layout="@layout/main_nav_drawer"/>
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

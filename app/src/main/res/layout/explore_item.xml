@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/book_item">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="book_name"
+        android:textSize="28dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:id="@+id/book_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/author_name"
+        android:text="author_name"
+        android:layout_below="@+id/book_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="24dp"
+        android:textColor="#636465"/>
+
+    <SlidingDrawer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/author_name"
+        android:layout_alignParentRight="true"
+        android:handle="@id/handle1"
+        android:backgroundTint="@color/white"
+        android:content="@id/content1"
+        android:orientation="vertical"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="-17dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/handle1"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/content1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="publication"
+                android:id="@+id/publication"
+                android:textColor="#636465"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="noOfCopies"
+                android:id="@+id/noOfCopies"
+                android:textColor="#636465"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="publication"
+                android:id="@+id/availableCopies"
+                android:textColor="#636465"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="shelf"
+                android:id="@+id/shelf"
+                android:textColor="#636465"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"/>
+
+
+        </LinearLayout>
+
+    </SlidingDrawer>
+
+</RelativeLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:id="@+id/profile"
+    android:onClick="clickProfile"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/profile_pic"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="180dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Name"
+        android:id="@+id/profile_name"
+        android:layout_marginLeft="60dp"
+        android:textSize="20dp"
+        android:textColor="#636465"
+        android:textStyle="bold"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:src="#636465"
+        android:layout_margin="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="clickHome"
+        android:id="@+id/home_layout">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/home_icon"
+            android:src="@drawable/ic_baseline_home_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:id="@+id/home_text"
+            android:text="Home"
+            android:textColor="#636465"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="clickExplore"
+        android:id="@+id/explore_layout">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/explore_icon"
+            android:src="@drawable/ic_baseline_explore_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Explore"
+            android:id="@+id/explore_text"
+            android:textColor="#636465"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="clickMyBooks"
+        android:id="@+id/mybooks_layout">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/mybooks_icon"
+            android:src="@drawable/ic_baseline_library_books_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="My Books"
+            android:id="@+id/mybooks_text"
+            android:textColor="#636465"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="clickGuidelines"
+        android:id="@+id/guidelines_layout">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/guidelines_icon"
+            android:src="@drawable/ic_baseline_view_list_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Guidelines"
+            android:id="@+id/guidelines_text"
+            android:textColor="#636465"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="clickLogout"
+        android:id="@+id/logout_layout">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/logout_icon"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logout"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Logout"
+            android:id="@+id/logout_text"
+            android:textColor="#636465"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
