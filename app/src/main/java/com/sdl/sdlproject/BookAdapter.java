@@ -26,7 +26,7 @@ private Context mContext;
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(mContext).inflate(R.layout.explore_item,parent,false);
+        View view= LayoutInflater.from(mContext).inflate(R.layout.itemreservedbook,parent,false);
         return new MyViewHolder(view);
 
     }

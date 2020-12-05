@@ -152,8 +152,8 @@ public class LoginActivity extends AppCompatActivity {
                     String regId = RegistrationId.getText().toString();
                     String pswd = password.getText().toString();
                     if (regId.equals("admin") && pswd.equals("admin")) {
-                        Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
+//                        startActivity(intent);
                     } else {
                         DocumentReference current_user = db.collection("Students").document(regId);
                         current_user.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
