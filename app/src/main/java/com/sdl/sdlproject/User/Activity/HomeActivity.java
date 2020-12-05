@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -15,6 +15,9 @@ import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.sdl.sdlproject.LoginActivity;
+import com.sdl.sdlproject.R;
 
 import static com.sdl.sdlproject.LoginActivity.curr_doc;
 
@@ -59,13 +62,13 @@ Spanned news= Html.fromHtml("<pre><br>\n" +
         recreate();
     }
     public void clickExplore(View view){
-        redirectActivity(this,Explore.class);
+        redirectActivity(this, ExploreActivity.class);
     }
     public void clickMyBooks(View view){
-        redirectActivity(this,MyBooks.class);
+        redirectActivity(this, MyBooks.class);
     }
     public void clickGuidelines(View view){
-        redirectActivity(this,Guidelines.class);
+        redirectActivity(this, GuidelinesActivity.class);
     }
     public void clickLogout(View view){
         logout(this);
@@ -83,7 +86,7 @@ Spanned news= Html.fromHtml("<pre><br>\n" +
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                redirectActivity(activity,LoginActivity.class);
+                redirectActivity(activity, LoginActivity.class);
             }
         });
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {

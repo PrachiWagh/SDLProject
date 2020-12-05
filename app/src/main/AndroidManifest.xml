@@ -8,14 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".StudentDetailsActivity"></activity>
-        <activity android:name=".AdminHomeActivity" />
-        <activity android:name=".BookItemActivity" />
-        <activity android:name=".Guidelines" />
-        <activity android:name=".MyBooks" />
-        <activity android:name=".Explore" />
-        <activity android:name=".HomeActivity" />
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Admin.Activity.ActivityAdmin"></activity>
+        <activity android:name=".User.Activity.BookItemActivity" />
+        <activity android:name=".User.Activity.GuidelinesActivity" />
+        <activity android:name=".User.Activity.MyBooks" />
+        <activity android:name=".User.Activity.ExploreActivity" />
+        <activity android:name=".User.Activity.HomeActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

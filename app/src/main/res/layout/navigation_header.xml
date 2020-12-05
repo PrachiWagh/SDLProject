@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="@color/DeepPurple50"
+    android:layout_height="120dp"
+    android:background="@drawable/backgound"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="120dp"
         >
 
         <LinearLayout
@@ -16,34 +16,35 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:paddingStart="20dp"
+            android:layout_weight="2"
             android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:paddingStart="20dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/pictlogo"
+
+                />
 
             <TextView
                 android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
-                android:text="name"
+                android:text="Admin"
                 android:textColor="@color/Grey900"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:textStyle="bold"
 
-            <TextView
-                android:id="@+id/sub_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:text="gmail"
-                android:paddingTop="10dp"
-                android:textColor="@color/Grey900"
-                android:textSize="11sp" />
+
+                />
+
 
         </LinearLayout>
-
 
 
     </LinearLayout>

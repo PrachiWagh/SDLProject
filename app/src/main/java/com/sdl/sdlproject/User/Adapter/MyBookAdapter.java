@@ -1,17 +1,15 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.ColorFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.SlidingDrawer;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
+import com.sdl.sdlproject.Model.MyBooksItem;
+import com.sdl.sdlproject.R;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 

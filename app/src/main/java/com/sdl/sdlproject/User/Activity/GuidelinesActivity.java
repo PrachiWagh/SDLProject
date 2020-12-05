@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -12,10 +12,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import static com.sdl.sdlproject.HomeActivity.closeDrawer;
+import com.sdl.sdlproject.R;
+import com.sdl.sdlproject.User.Activity.ExploreActivity;
+import com.sdl.sdlproject.User.Activity.HomeActivity;
+import com.sdl.sdlproject.User.Activity.MyBooks;
+
+import static com.sdl.sdlproject.User.Activity.HomeActivity.closeDrawer;
 import static com.sdl.sdlproject.LoginActivity.curr_doc;
 
-public class Guidelines extends AppCompatActivity {
+public class GuidelinesActivity extends AppCompatActivity {
 DrawerLayout drawerLayout;
     TextView student_name,guidelines_text;
     public static Spanned guidelines= Html.fromHtml("<pre><br>\n" +
@@ -59,13 +64,13 @@ DrawerLayout drawerLayout;
         editor.apply();
     }
     public void clickMyBooks(View view){
-        HomeActivity.redirectActivity(this,MyBooks.class);
+        HomeActivity.redirectActivity(this, MyBooks.class);
     }
     public void clickGuidelines(View view){
       recreate();
     }
     public void clickExplore(View view){
-        HomeActivity.redirectActivity(this,Explore.class);
+        HomeActivity.redirectActivity(this, ExploreActivity.class);
     }
     @Override
     protected void onPause() {

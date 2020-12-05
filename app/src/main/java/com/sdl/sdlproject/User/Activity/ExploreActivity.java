@@ -1,33 +1,22 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import static com.sdl.sdlproject.HomeActivity.closeDrawer;
-import static com.sdl.sdlproject.LoginActivity.booksList;
-import static com.sdl.sdlproject.LoginActivity.curr_doc;
-import static java.security.AccessController.getContext;
+import com.sdl.sdlproject.User.Fragments.ExploreFragment;
+import com.sdl.sdlproject.R;
 
-public class Explore extends AppCompatActivity {
+import static com.sdl.sdlproject.User.Activity.HomeActivity.closeDrawer;
+import static com.sdl.sdlproject.LoginActivity.curr_doc;
+
+public class ExploreActivity extends AppCompatActivity {
 DrawerLayout drawerLayout;
     TextView student_name;
 
@@ -66,10 +55,10 @@ DrawerLayout drawerLayout;
         editor.apply();
     }
     public void clickMyBooks(View view){
-        HomeActivity.redirectActivity(this,MyBooks.class);
+        HomeActivity.redirectActivity(this, MyBooks.class);
     }
     public void clickGuidelines(View view){
-       HomeActivity.redirectActivity(this,Guidelines.class);
+       HomeActivity.redirectActivity(this, GuidelinesActivity.class);
     }
     public  void clickExplore(View view){
         recreate();

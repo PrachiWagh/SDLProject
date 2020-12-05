@@ -1,4 +1,4 @@
-package com.sdl.sdlproject.Adapters;
+package com.sdl.sdlproject.User.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
 
-import com.sdl.sdlproject.BookItemActivity;
-import com.sdl.sdlproject.Books;
+import com.sdl.sdlproject.User.Activity.BookItemActivity;
+import com.sdl.sdlproject.Model.Books;
 import com.sdl.sdlproject.R;
 
 import androidx.annotation.NonNull;

@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.sdl.sdlproject.Adapters.BookAdapter;
+import com.sdl.sdlproject.R;
+import com.sdl.sdlproject.User.Adapter.BookAdapter;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import static com.sdl.sdlproject.LoginActivity.myBooksItems;
 import static com.sdl.sdlproject.LoginActivity.reservedBooks;
-import static com.sdl.sdlproject.MyBooksFragment.late_fee;
+import static com.sdl.sdlproject.User.Fragments.MyBooksFragment.late_fee;
 
 public class ReservedBooksFragment extends Fragment {
     RecyclerView recyclerView2;

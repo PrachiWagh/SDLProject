@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +14,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.sdl.sdlproject.R;
+import com.sdl.sdlproject.Model.Books;
 
-import static com.sdl.sdlproject.Adapters.BookAdapter.books;
+import static com.sdl.sdlproject.User.Adapter.BookAdapter.books;
 import static com.sdl.sdlproject.LoginActivity.resBooksId;
 import static com.sdl.sdlproject.LoginActivity.reservedBooks;
 

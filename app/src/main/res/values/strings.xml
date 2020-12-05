@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">SDL Mini Project</string>
     <string name="forgot_password"><a href="https://www.google.com/"><font color="#ffffff">Forgot password?</font></a></string>
-    S
+
+
+    <string-array name="categoryArray">
+        <item>MP</item>
+        <item>CG</item>
+        <item>A</item>
+        <item>DBMS</item>
+    </string-array>
+
+    <string-array name="shelfArray">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+
+    </string-array>
+
 </resources>

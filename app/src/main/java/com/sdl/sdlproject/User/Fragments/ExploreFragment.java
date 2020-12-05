@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import com.sdl.sdlproject.Adapters.BookAdapter;
+import com.sdl.sdlproject.R;
+import com.sdl.sdlproject.User.Adapter.BookAdapter;
+import com.sdl.sdlproject.Model.Books;
 
 import androidx.annotation.Nullable;
 import androidx.drawerlayout.widget.DrawerLayout;

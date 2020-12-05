@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:id="@+id/drawer_layout"
     android:layout_height="match_parent"
-    tools:context=".Guidelines">
+    tools:context=".User.Activity.GuidelinesActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

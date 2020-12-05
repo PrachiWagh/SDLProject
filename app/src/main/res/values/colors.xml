@@ -10,6 +10,9 @@
     <color name="grey">#DDD8D8</color>
     <color name="blue">#40BCF4</color>
 
+    <color name="colorAccent">#72ded4</color>
+    <color name="colorPrimary">#572cd8</color>
+    <color name="colorPrimaryDark">#3a199b</color>
 
     <color name="colorAccent2">#7856df</color>
     <color name="colorAccent3">#eef1ff</color>

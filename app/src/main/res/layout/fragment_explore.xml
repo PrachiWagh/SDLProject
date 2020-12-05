@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/grey"
     android:background="@color/grey"
-    tools:context=".ExploreFragment">
+    tools:context=".User.Fragments.ExploreFragment">
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

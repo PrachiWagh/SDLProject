@@ -21,6 +21,10 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.sdl.sdlproject.Admin.Activity.ActivityAdmin;
+import com.sdl.sdlproject.Model.Books;
+import com.sdl.sdlproject.Model.MyBooksItem;
+import com.sdl.sdlproject.User.Activity.HomeActivity;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -36,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     public static ArrayList<Books> reservedBooks;
     public static ArrayList<String> resBooksId;
     public ArrayList<String> resBooksId1;
-
+    public static int booksize;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +64,9 @@ public class LoginActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("books_collection", document.getId() + " => " + document.getData());
                                 booksList.add(document.toObject(Books.class));
+
                             }
+                            booksize=  booksList.size();
                         } else {
                             Log.d("books_collection", "Error getting documents: ", task.getException());
                         }
@@ -94,6 +100,8 @@ public class LoginActivity extends AppCompatActivity {
                                         String title = (String) document.get("title");
                                         myBooksItems.add(new MyBooksItem(title, map.get("issueDate"), map.get("returnDate")));
                                     }
+
+
                                 }
                             }
                         });
@@ -151,8 +159,8 @@ public class LoginActivity extends AppCompatActivity {
                 String regId = RegistrationId.getText().toString();
                 String pswd = password.getText().toString();
                 if (regId.equals("admin") && pswd.equals("admin")) {
-//                        Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
-//                        startActivity(intent);
+                        Intent intent = new Intent(LoginActivity.this, ActivityAdmin.class);
+                        startActivity(intent);
                 } else {
                     DocumentReference current_user = db.collection("Students").document(regId);
                     current_user.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

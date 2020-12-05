@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,10 +17,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.sdl.sdlproject.User.Fragments.MyBooksFragment;
+import com.sdl.sdlproject.R;
+import com.sdl.sdlproject.User.Fragments.ReservedBooksFragment;
 
 import java.util.ArrayList;
 
-import static com.sdl.sdlproject.HomeActivity.closeDrawer;
+import static com.sdl.sdlproject.User.Activity.HomeActivity.closeDrawer;
 import static com.sdl.sdlproject.LoginActivity.curr_doc;
 
 public class MyBooks extends AppCompatActivity {
@@ -56,10 +59,10 @@ DrawerLayout drawerLayout;
         recreate();
     }
     public void clickGuidelines(View view){
-        HomeActivity.redirectActivity(this,Guidelines.class);
+        HomeActivity.redirectActivity(this, GuidelinesActivity.class);
     }
     public void clickExplore(View view){
-        HomeActivity.redirectActivity(this,Explore.class);
+        HomeActivity.redirectActivity(this, ExploreActivity.class);
     }
     @Override
     protected void onPause() {

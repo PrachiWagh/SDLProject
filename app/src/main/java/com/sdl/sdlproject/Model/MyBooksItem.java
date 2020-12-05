@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.Model;
 
 public class MyBooksItem {
     String title,issueDate,returnDate;

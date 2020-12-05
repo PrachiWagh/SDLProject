@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgound"
+
+    >
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:elevation="50dp"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/Grey700"
+        android:padding="10dp"
+        app:cardElevation="30dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="add book"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/title_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
+                android:padding="5dp"
+                app:hintTextColor="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                android:layout_margin="10dp"
+                app:boxStrokeColor="@color/purple_200"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/author_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Author"
+                android:padding="5dp"
+                app:hintTextColor="@color/colorPrimary"
+                app:boxStrokeColor="@color/purple_200"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/publication_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Publication"
+                android:padding="5dp"
+                app:hintTextColor="@color/colorPrimary"
+                app:boxStrokeColor="@color/purple_200"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/category_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Category"
+                android:padding="5dp"
+                app:hintTextColor="@color/colorPrimary"
+                app:boxStrokeColor="@color/purple_200"
+
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/category_addBook_autocompleteview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:padding="10dp"
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shelf_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Shelf"
+                android:padding="5dp"
+                app:hintTextColor="@color/colorPrimary"
+                app:boxStrokeColor="@color/purple_200"
+
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/shelf_addBook_autocompleteview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:layout_marginTop="5dp"
+                    android:padding="10dp"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                   android:layout_alignParentStart="true"
+                   android:layout_marginStart="40dp"
+                   >
+
+                   <com.google.android.material.textfield.TextInputLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:hint="Available"
+                       android:layout_weight="1"
+                       android:padding="5dp"
+                       app:boxStrokeColor="@color/purple_200"
+                       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                       >
+
+                       <com.google.android.material.textfield.TextInputEditText
+                           android:layout_width="100dp"
+                           android:layout_height="wrap_content"
+                           android:inputType="number"
+                           android:padding="5dp"
+                           android:text="0"
+                           android:layout_marginTop="5dp"
+                           />
+
+
+                   </com.google.android.material.textfield.TextInputLayout>
+
+               </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true"
+                    app:boxStrokeColor="@color/purple_200"
+                    >
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:hint="Total"
+                        android:layout_weight="1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:padding="5dp"
+                            android:text="0"
+                            android:layout_marginTop="5dp"
+                            />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Database"
+                android:layout_margin="15dp"
+                android:layout_gravity="center"
+                app:cornerRadius="10dp"
+                android:elevation="50dp"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/Teal200"
+                style="@style/Widget.MaterialComponents.Button"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/Grey300"
+                android:layout_marginBottom="10dp"
+                app:elevation="40dp"
+                />
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

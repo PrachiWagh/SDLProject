@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.User.Fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -7,34 +7,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+import com.sdl.sdlproject.Model.MyBooksItem;
+import com.sdl.sdlproject.R;
+import com.sdl.sdlproject.User.Adapter.MyBookAdapter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Map;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
-import static com.sdl.sdlproject.LoginActivity.booksList;
 import static com.sdl.sdlproject.LoginActivity.myBooksItems;
-
-import static com.sdl.sdlproject.LoginActivity.curr_doc;
 
 public class MyBooksFragment extends Fragment {
     RecyclerView recyclerView1;

@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.Model;
 
 public class Books {
     private String title,author,category,publication,shelf;
