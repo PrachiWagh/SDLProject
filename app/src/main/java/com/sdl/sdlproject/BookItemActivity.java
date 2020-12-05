@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import static com.sdl.sdlproject.BookAdapter.books;
+import static com.sdl.sdlproject.Adapters.BookAdapter.books;
 import static com.sdl.sdlproject.LoginActivity.resBooksId;
 import static com.sdl.sdlproject.LoginActivity.reservedBooks;
 

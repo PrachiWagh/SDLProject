@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.sdl.sdlproject.Adapters.BookAdapter;
 
 import androidx.annotation.Nullable;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -18,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import static com.sdl.sdlproject.LoginActivity.booksList;
-import static com.sdl.sdlproject.LoginActivity.curr_doc;
 
 public class ExploreFragment extends Fragment implements SearchView.OnQueryTextListener {
     RecyclerView recyclerView;

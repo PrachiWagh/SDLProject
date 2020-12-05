@@ -1,4 +1,4 @@
-package com.sdl.sdlproject;
+package com.sdl.sdlproject.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
+
+import com.sdl.sdlproject.BookItemActivity;
+import com.sdl.sdlproject.Books;
+import com.sdl.sdlproject.R;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,7 +46,7 @@ private Context mContext;
           holder.itemView.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
-                  Intent intent=new Intent(mContext,BookItemActivity.class);
+                  Intent intent=new Intent(mContext, BookItemActivity.class);
                   intent.putExtra("position",position);
 
                   mContext.startActivity(intent);
