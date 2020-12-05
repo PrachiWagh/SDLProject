@@ -11,13 +11,22 @@
         android:orientation="vertical">
         <include layout="@layout/main_toolbar"/>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="MyBooks"
-            android:textSize="30dp"
-            android:gravity="center" />
+            android:background="@color/white"
+            android:id="@+id/tab_layout"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="bottom"
+            app:tabTextColor="@color/grey"
+            app:tabIndicatorHeight="2dp"
+            app:tabIndicatorColor="@color/blue"
+            app:tabSelectedTextColor="@color/blue"
+            />
+        <androidx.viewpager.widget.ViewPager
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/view_pager"/>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="300dp"

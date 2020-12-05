@@ -1,17 +1,31 @@
 package com.sdl.sdlproject;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.util.AttributeSet;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import static com.sdl.sdlproject.HomeActivity.closeDrawer;
+import static com.sdl.sdlproject.LoginActivity.booksList;
 import static com.sdl.sdlproject.LoginActivity.curr_doc;
+import static java.security.AccessController.getContext;
 
 public class Explore extends AppCompatActivity {
 DrawerLayout drawerLayout;
@@ -25,6 +39,12 @@ DrawerLayout drawerLayout;
         student_name=findViewById(R.id.profile_name);
         String profile_name=curr_doc.get("firstName")+" "+curr_doc.get("lastName");
         student_name.setText(profile_name);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.fragment_container_view, ExploreFragment.class, null)
+                    .commit();
+        }
 
     }
 
@@ -61,9 +81,4 @@ DrawerLayout drawerLayout;
         closeDrawer(drawerLayout);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        System.exit(0);
-    }
 }

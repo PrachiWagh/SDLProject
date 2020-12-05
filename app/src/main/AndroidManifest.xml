@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name="com.sdl.sdlproject.Guidelines"></activity>
-        <activity android:name="com.sdl.sdlproject.MyBooks" />
-        <activity android:name="com.sdl.sdlproject.Explore" />
-        <activity android:name="com.sdl.sdlproject.HomeActivity" />
-        <activity android:name="com.sdl.sdlproject.LoginActivity">
+        <activity android:name=".StudentDetailsActivity"></activity>
+        <activity android:name=".AdminHomeActivity" />
+        <activity android:name=".BookItemActivity" />
+        <activity android:name=".Guidelines" />
+        <activity android:name=".MyBooks" />
+        <activity android:name=".Explore" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

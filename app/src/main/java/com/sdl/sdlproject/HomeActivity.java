@@ -21,7 +21,10 @@ import static com.sdl.sdlproject.LoginActivity.curr_doc;
 public class HomeActivity extends AppCompatActivity {
 DrawerLayout drawerLayout;
 TextView student_name,news_text;
-Spanned news= Html.fromHtml("");
+Spanned news= Html.fromHtml("<pre><br>\n" +
+        "o\t<b>1. Library is planning to host a essay writing competition on eve of Gandhi Jayanti</b><br>\n" +
+        "o\t<b>2.Online session on Digital Library</b><br>\n" +
+        "</pre>\n");
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

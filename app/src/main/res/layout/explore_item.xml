@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    android:layout_margin="3dp">
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="book_name"
-        android:textSize="28dp"
+        android:textSize="18dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_margin="10dp"
@@ -21,67 +28,85 @@
         android:text="author_name"
         android:layout_below="@+id/book_name"
         android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
-        android:textSize="24dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="12dp"
         android:textColor="#636465"/>
-
-    <SlidingDrawer
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/author_name"
+        android:text="Category"
+        android:id="@+id/category"
+        android:layout_below="@+id/author_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/blue"
+        android:textSize="12dp"/>
+
+  <!--  <SlidingDrawer
+        android:id="@+id/sliding_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/category"
         android:layout_alignParentRight="true"
-        android:handle="@id/handle1"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="-113dp"
         android:backgroundTint="@color/white"
         android:content="@id/content1"
-        android:orientation="vertical"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="-17dp">
+        android:handle="@id/handle1"
+        android:orientation="vertical">
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/handle1"
-            android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
-        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+
+        <LinearLayout
             android:id="@+id/content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="publication"
                 android:id="@+id/publication"
-                android:textColor="#636465"
-                android:textSize="15dp"
-                android:layout_marginLeft="20dp"/>
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="noOfCopies"
-                android:id="@+id/noOfCopies"
-                android:textColor="#636465"
-                android:textSize="15dp"
-                android:layout_marginLeft="20dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:text="publication"
-                android:id="@+id/availableCopies"
                 android:textColor="#636465"
-                android:textSize="15dp"
-                android:layout_marginLeft="20dp"/>
+                android:textSize="15dp" />
+
             <TextView
+                android:id="@+id/noOfCopies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="shelf"
-                android:id="@+id/shelf"
+                android:layout_marginLeft="20dp"
+                android:text="noOfCopies"
                 android:textColor="#636465"
-                android:textSize="15dp"
-                android:layout_marginLeft="20dp"/>
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/availableCopies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="publication"
+                android:textColor="#636465"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/shelf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="shelf"
+                android:textColor="#636465"
+                android:textSize="15dp" />
 
 
         </LinearLayout>
 
-    </SlidingDrawer>
+    </SlidingDrawer>-->
 
 </RelativeLayout>
+</androidx.cardview.widget.CardView>

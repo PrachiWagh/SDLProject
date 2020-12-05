@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SDL Mini Project</string>
-    <string name="forgot_password"><a href="https://www.google.com/"><font color="#ffffff">Forgot password?</font></a></string>S
+    <string name="forgot_password"><a href="https://www.google.com/"><font color="#ffffff">Forgot password?</font></a></string>
+    S
 </resources>
