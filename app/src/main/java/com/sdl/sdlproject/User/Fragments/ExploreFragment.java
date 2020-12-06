@@ -27,13 +27,8 @@ public class ExploreFragment extends Fragment implements SearchView.OnQueryTextL
     SearchView searchView;
     DrawerLayout drawerLayout;
     TextView student_name;
-   public static BookAdapter bookAdapter;
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+   public BookAdapter bookAdapter;
 
-
-    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

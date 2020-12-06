@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:elevation="50dp"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="30dp"
+        app:strokeColor="@color/Grey700"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="update book"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/title_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="5dp"
+                android:hint="Title"
+                android:padding="5dp"
+                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/author_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Author"
+                android:padding="5dp"
+                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/colorPrimary"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/publication_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Publication"
+                android:padding="5dp"
+                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/colorPrimary"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/category_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Category"
+                android:padding="5dp"
+                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/colorPrimary"
+
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/category_addBook_autocompleteview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:padding="10dp"
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shelf_addBook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Shelf"
+                android:padding="5dp"
+                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/colorPrimary"
+
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/shelf_addBook_autocompleteview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:inputType="none"
+                    android:padding="10dp"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="40dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/available_addbook"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Available"
+                        android:padding="5dp"
+                        app:boxStrokeColor="@color/purple_200">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:inputType="number"
+                            android:padding="5dp"
+                            android:text="0" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="40dp"
+                    android:orientation="vertical"
+                    app:boxStrokeColor="@color/purple_200">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/total_addbook"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Total"
+                        android:padding="5dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:inputType="number"
+                            android:padding="5dp"
+                            android:text="0" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/dialog_cancel"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:elevation="50dp"
+                    android:text="cancel"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/Teal200"
+                    app:cornerRadius="10dp"
+                    app:elevation="40dp"
+                    app:strokeColor="@color/Grey300"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/dialog_updatebtn"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:elevation="50dp"
+                    android:text="Update to Database"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/Teal200"
+                    app:cornerRadius="10dp"
+                    app:elevation="40dp"
+                    app:strokeColor="@color/Grey300"
+                    app:strokeWidth="1dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

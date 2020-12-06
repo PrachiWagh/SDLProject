@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     public static ArrayList<String> resBooksId;
     public ArrayList<String> resBooksId1;
     public static int booksize;
+    private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,24 +55,10 @@ public class LoginActivity extends AppCompatActivity {
         reservedBooks = new ArrayList<>();
         resBooksId = new ArrayList<>();
         // Access a Cloud Firestore instance from your Activity
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("Books")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("books_collection", document.getId() + " => " + document.getData());
-                                booksList.add(document.toObject(Books.class));
+        db= FirebaseFirestore.getInstance();
 
-                            }
-                            booksize=  booksList.size();
-                        } else {
-                            Log.d("books_collection", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
+        getBooks();
+
 
 
         SharedPreferences sp = getSharedPreferences("user", MODE_PRIVATE);
@@ -233,4 +220,29 @@ public class LoginActivity extends AppCompatActivity {
 
         });
     }
+
+    public static void getBooks(){
+        FirebaseFirestore  db= FirebaseFirestore.getInstance();
+        db.collection("Books")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("books_collection", document.getId() + " => " + document.getData());
+                                booksList.add(document.toObject(Books.class));
+
+                            }
+                            booksize=  booksList.size();
+                        } else {
+                            Log.d("books_collection", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+    }
+
 }
+
+
