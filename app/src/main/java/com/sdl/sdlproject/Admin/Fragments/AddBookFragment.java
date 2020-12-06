@@ -1,6 +1,7 @@
 package com.sdl.sdlproject.Admin.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +12,26 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.sdl.sdlproject.Model.Books;
 import com.sdl.sdlproject.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.sdl.sdlproject.LoginActivity.booksList;
 import static com.sdl.sdlproject.LoginActivity.booksize;
 
 public class AddBookFragment extends Fragment {
@@ -31,6 +39,8 @@ public class AddBookFragment extends Fragment {
     NumberPicker numberpicker_available,numberpicker_total;
     EditText title_text,author_text,publication_text,available_text,total_text;
     Button add_to_databse;
+    int booksizetemp;
+    ArrayList<Books> temp = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,6 +73,8 @@ public class AddBookFragment extends Fragment {
                 db_addBook.collection("Books").add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+                        getBooks();
+//                        booksList.add(new Books());
                         Toast.makeText(getContext(), "Book Added Successfully", Toast.LENGTH_SHORT).show();
                         booksize+=1;
                     }
@@ -82,4 +94,33 @@ public class AddBookFragment extends Fragment {
 
         return view;
     }
+
+    public void getBooks(){
+        FirebaseFirestore  db= FirebaseFirestore.getInstance();
+        db.collection("Books")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        task.addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    Log.d("books_collection", document.getId() + " => " + document.getData());
+                                    temp.add(document.toObject(Books.class));
+
+                                }
+                                ArrayList<Books> t1 = booksList;
+                                booksList.removeAll(t1);
+                                booksList.addAll(temp);
+                                Log.d("books","New List Added *******************");
+                                booksizetemp=  temp.size();
+                            }
+                        });
+                    }
+                });
+
+    }
+
+
 }

@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     public static ArrayList<String> resBooksId;
     public ArrayList<String> resBooksId1;
     public static int booksize;
+    private FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,24 +56,10 @@ public class LoginActivity extends AppCompatActivity {
         reservedBooks = new ArrayList<>();
         resBooksId = new ArrayList<>();
         // Access a Cloud Firestore instance from your Activity
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("Books")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("books_collection", document.getId() + " => " + document.getData());
-                                booksList.add(document.toObject(Books.class));
+        db= FirebaseFirestore.getInstance();
 
-                            }
-                            booksize=  booksList.size();
-                        } else {
-                            Log.d("books_collection", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
+        getBooks();
+
 
 
         SharedPreferences sp = getSharedPreferences("user", MODE_PRIVATE);
@@ -88,19 +76,21 @@ public class LoginActivity extends AppCompatActivity {
                     curr_doc = doc;
 
                     ArrayList<Map<String, String>> map1 = (ArrayList<Map<String, String>>) curr_doc.get("issuedBooks");
-                    for (Map<String, String> map : map1) {
-                        String id = map.get("bookId");
+                    Log.d("loginzz",String.valueOf(map1.size()));
 
+                    for (Map<String, String> map : map1) {
+                        String id = map.get("bookId").trim();
+
+                        Log.d("loginzz",id);
                         db.collection("Books").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    DocumentSnapshot document = task.getResult();
-                                    if (document.exists()) {
-                                        String title = (String) document.get("title");
-                                        myBooksItems.add(new MyBooksItem(title, map.get("issueDate"), map.get("returnDate")));
-                                    }
 
+                                Log.d("login", String.valueOf(task.getResult() + "zzz"));
+                                if (task.isSuccessful()) {
+                                    String title = (String) task.getResult().get("title");
+//                                    Log.d("login", title);
+                                    myBooksItems.add(new MyBooksItem(title, map.get("issueDate"), map.get("returnDate")));
 
                                 }
                             }
@@ -233,4 +223,29 @@ public class LoginActivity extends AppCompatActivity {
 
         });
     }
+
+    public static void getBooks(){
+        FirebaseFirestore  db= FirebaseFirestore.getInstance();
+        db.collection("Books")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("books_collection", document.getId() + " => " + document.getData());
+                                booksList.add(document.toObject(Books.class));
+
+                            }
+                            booksize=  booksList.size();
+                        } else {
+                            Log.d("books_collection", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+
+    }
+
 }
+
+

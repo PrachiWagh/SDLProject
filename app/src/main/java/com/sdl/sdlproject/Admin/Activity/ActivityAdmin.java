@@ -7,14 +7,12 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 import com.sdl.sdlproject.Admin.Adapter.NavigationAdapter;
 import com.sdl.sdlproject.Admin.Fragments.AddBookFragment;
-import com.sdl.sdlproject.Admin.Fragments.DeleteBookFragment;
-import com.sdl.sdlproject.Admin.Fragments.UpdateBook;
+import com.sdl.sdlproject.Admin.Fragments.UpdateBookFragment;
 import com.sdl.sdlproject.Admin.Fragments.ViewStDetailsFragment;
 import com.sdl.sdlproject.Model.NavListItem;
 import com.sdl.sdlproject.R;
@@ -70,7 +68,6 @@ public class ActivityAdmin extends AppCompatActivity {
 
         navListItemArrayList.add(new NavListItem("Add Book", R.drawable.ic_outline_add_box_24));
         navListItemArrayList.add(new NavListItem("Update Books", R.drawable.ic_baseline_book_24));
-        navListItemArrayList.add(new NavListItem("Delete Books", R.drawable.ic_baseline_delete_menu_book_24));
         navListItemArrayList.add(new NavListItem("View Student Details", R.drawable.ic_baseline_student_details_24));
         navListItemArrayList.add(new NavListItem("Sign Out", R.drawable.ic_baseline_exit_to_app_24));
         adapter = new NavigationAdapter(ActivityAdmin.this, navListItemArrayList);
@@ -98,18 +95,14 @@ public class ActivityAdmin extends AppCompatActivity {
             }
             break;
             case 1: {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_view_admin, new UpdateBook()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_view_admin, new UpdateBookFragment()).commit();
             }
             break;
             case 2: {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_view_admin, new DeleteBookFragment()).commit();
-            }
-            break;
-            case 3: {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_view_admin, new ViewStDetailsFragment()).commit();
             }
             break;
-            case 4: {
+            case 3: {
                 finish();
             }
             break;

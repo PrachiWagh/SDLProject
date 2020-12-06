@@ -27,13 +27,8 @@ public class ExploreFragment extends Fragment implements SearchView.OnQueryTextL
     SearchView searchView;
     DrawerLayout drawerLayout;
     TextView student_name;
-   public static BookAdapter bookAdapter;
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+   public BookAdapter bookAdapter;
 
-
-    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,13 +36,14 @@ public class ExploreFragment extends Fragment implements SearchView.OnQueryTextL
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_explore, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
-        //  recyclerView.setHasFixedSize(true);
+          recyclerView.setHasFixedSize(true);
         Log.d("MusicFiles", String.valueOf(booksList.size()));
         if (!(booksList.size() < 1)) {
             bookAdapter = new BookAdapter( booksList,getContext());
             recyclerView.setAdapter(bookAdapter);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         }
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+
         searchView=view.findViewById(R.id.search);
         searchView.setOnQueryTextListener(this);
 
