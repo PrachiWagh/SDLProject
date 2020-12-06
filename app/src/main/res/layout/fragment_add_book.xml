@@ -237,7 +237,6 @@
                 android:layout_margin="15dp"
                 android:layout_gravity="center"
                 app:cornerRadius="10dp"
-                android:elevation="50dp"
                 android:id="@+id/add_to_database"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/Teal200"

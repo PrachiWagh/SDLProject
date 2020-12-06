@@ -84,6 +84,68 @@
                 android:textSize="12dp" />
 
 
+            <LinearLayout
+                android:id="@+id/date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/category_update"
+                android:orientation="vertical"
+                android:visibility="gone"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Issue Date"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/issuedate_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12-12-2020"
+                    android:layout_marginEnd="20dp"
+
+                    />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Return Date"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/returndate_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12-12-2020"
+                        android:layout_marginEnd="20dp"
+
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </RelativeLayout>
     </LinearLayout>
 
