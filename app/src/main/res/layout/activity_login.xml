@@ -9,73 +9,81 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/login_background"/>
+        android:src="@drawable/login_bg"
+        android:scaleType="fitXY"></ImageView>
 
-    /ImageView>
-
-    <ImageView
-        android:layout_width="134dp"
-        android:layout_height="122dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:layout_above="@id/login_layout"
-        android:src="@drawable/library"
-        />
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="300dp"
+    android:id="@+id/login_layout"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="100dp"
+    app:cardElevation="20dp"
+    android:layout_centerHorizontal="true"
+    android:layout_height="350dp">
 
     <LinearLayout
-        android:id="@+id/login_layout"
-        android:layout_width="299dp"
-        android:layout_height="268dp"
+        android:layout_width="301dp"
+        android:layout_height="377dp"
         android:layout_centerInParent="true"
+        android:background="@drawable/login_bg2"
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/RegistrationId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="@color/white"
             android:hint="Registration Id"
             android:text="admin"
-            android:id="@+id/RegistrationId"
             android:textColor="@color/white"
             android:textColorHint="@color/grey" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/white"
-            android:text="admin"
-            android:password="true"
             android:hint="Password"
-            android:id="@+id/password"
+            android:password="true"
+            android:text="admin"
             android:textColor="@color/white"
             android:textColorHint="@color/grey" />
 
         <Button
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             android:text="LOGIN"
-            android:id="@+id/login_button"
-            android:textColor="#03A9F4"
+            android:textColor="@color/purple_500"
             app:backgroundTint="#FFFFFF" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/remember"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:buttonTint="@color/white"
             android:checked="false"
             android:text="Remember me"
             android:textColor="#FFFFFF"
-            android:id="@+id/remember"
             android:textColorHighlight="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:textColorLink="#FFFFFF" />
-
-
     </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="100dp"
