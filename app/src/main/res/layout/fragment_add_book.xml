@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backgound"
+    android:background="@color/white"
 
     >
 
@@ -33,28 +33,29 @@
                 android:gravity="center"
                 android:text="add book"
                 android:textAllCaps="true"
-                android:textColor="@color/black"
+                android:textColor="@color/Teal200"
                 android:textSize="18dp"
                 android:textStyle="bold"
 
                 />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/title_addBook"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Title"
                 android:padding="5dp"
-                app:hintTextColor="@color/colorPrimary"
+                app:hintTextColor="@color/Teal200"
                 android:layout_marginTop="5dp"
                 android:layout_margin="10dp"
-                app:boxStrokeColor="@color/purple_200"
+                app:boxStrokeColor="@color/Teal200"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/title_addBook"
                     android:textSize="16sp"
                     android:padding="10dp"
                     />
@@ -62,42 +63,44 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/author_addBook"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:hint="Author"
                 android:padding="5dp"
-                app:hintTextColor="@color/colorPrimary"
-                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/Teal200"
+                app:boxStrokeColor="@color/Teal200"
 
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/author_addBook"
                     android:textSize="16sp"
                     android:padding="10dp"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/publication_addBook"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:hint="Publication"
                 android:padding="5dp"
-                app:hintTextColor="@color/colorPrimary"
-                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/Teal200"
+                app:boxStrokeColor="@color/Teal200"
 
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/publication_addBook"
                     android:textSize="16sp"
                     android:padding="10dp"
                     />
@@ -111,8 +114,8 @@
                 android:layout_margin="10dp"
                 android:hint="Category"
                 android:padding="5dp"
-                app:hintTextColor="@color/colorPrimary"
-                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/Teal200"
+                app:boxStrokeColor="@color/Teal200"
 
                 >
 
@@ -135,8 +138,8 @@
                 android:layout_margin="10dp"
                 android:hint="Shelf"
                 android:padding="5dp"
-                app:hintTextColor="@color/colorPrimary"
-                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/Teal200"
+                app:boxStrokeColor="@color/Teal200"
 
                 >
 
@@ -169,8 +172,9 @@
                        android:layout_height="wrap_content"
                        android:hint="Available"
                        android:layout_weight="1"
+                       app:hintTextColor="@color/Teal200"
                        android:padding="5dp"
-                       app:boxStrokeColor="@color/purple_200"
+                       app:boxStrokeColor="@color/Teal200"
                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                        >
 
@@ -178,6 +182,7 @@
                            android:layout_width="100dp"
                            android:layout_height="wrap_content"
                            android:inputType="number"
+                           android:id="@+id/available_addBook"
                            android:padding="5dp"
                            android:text="0"
                            android:layout_marginTop="5dp"
@@ -195,13 +200,15 @@
                     android:layout_marginEnd="40dp"
                     android:orientation="vertical"
                     android:layout_alignParentEnd="true"
-                    app:boxStrokeColor="@color/purple_200"
+                    app:boxStrokeColor="@color/Teal200"
                     >
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:hint="Total"
+                        app:hintTextColor="@color/Teal200"
+                        app:boxStrokeColor="@color/Teal200"
                         android:layout_weight="1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         >
@@ -209,6 +216,7 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
+                            android:id="@+id/total_addBook"
                             android:inputType="number"
                             android:padding="5dp"
                             android:text="0"
@@ -230,6 +238,7 @@
                 android:layout_gravity="center"
                 app:cornerRadius="10dp"
                 android:elevation="50dp"
+                android:id="@+id/add_to_database"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/Teal200"
                 style="@style/Widget.MaterialComponents.Button"

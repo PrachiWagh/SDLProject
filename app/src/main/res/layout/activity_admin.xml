@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgound"
+    android:background="@color/white"
     tools:context=".Admin.Activity.ActivityAdmin">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -33,7 +33,7 @@
                     android:layout_height="48dp"
                     app:icon="@drawable/nav_logo"
                     app:iconGravity="textStart"
-                    app:iconTint="@color/White" />
+                    app:iconTint="@color/black" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -46,8 +46,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="left"
-                        android:text="SDL Mini Project"
-                        android:textColor="@color/White"
+                        android:text="PICT Library"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -57,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left"
                         android:text="Admin"
-                        android:textColor="@color/Grey200"
+                        android:textColor="@color/black"
                         android:textSize="12sp" />
 
 

@@ -77,7 +77,7 @@ public class ActivityAdmin extends AppCompatActivity {
         adapter.setOnItemClickListner(new NavigationAdapter.OnItemClickListner() {
             @Override
             public void switchnavitem(int position) {
-                Toast.makeText(getApplicationContext(),String.valueOf(position),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),String.valueOf(position),Toast.LENGTH_SHORT).show();
                 switchnavitem_withinterface(position);
             }
         });
