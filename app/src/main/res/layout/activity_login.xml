@@ -51,7 +51,7 @@
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/white"
                 android:hint="Registration Id"
-                android:text="admin"
+                android:text=""
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey" />
 
@@ -65,7 +65,7 @@
                 android:backgroundTint="@color/white"
                 android:hint="Password"
                 android:password="true"
-                android:text="admin"
+                android:text=""
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey" />
 

@@ -54,6 +54,7 @@ DrawerLayout drawerLayout;
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("remember", "false");
         editor.apply();
+        finish();
     }
     public void clickMyBooks(View view){
         recreate();

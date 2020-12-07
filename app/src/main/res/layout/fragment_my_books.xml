@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/blue"
+        android:background="@color/Purple500"
         android:orientation="horizontal"
         android:id="@+id/lateFeeLayout"
         android:gravity="center_horizontal">
@@ -25,7 +25,7 @@
             android:text="Late Fee: "
             android:id="@+id/lateFee"
             android:textSize="24dp"
-            android:textColor="@color/white"
+            android:textColor="@color/White"
             android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
