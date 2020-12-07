@@ -12,6 +12,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 import com.sdl.sdlproject.Admin.Adapter.NavigationAdapter;
 import com.sdl.sdlproject.Admin.Fragments.AddBookFragment;
+import com.sdl.sdlproject.Admin.Fragments.HomeFragment;
 import com.sdl.sdlproject.Admin.Fragments.UpdateBookFragment;
 import com.sdl.sdlproject.Admin.Fragments.ViewStDetailsFragment;
 import com.sdl.sdlproject.Model.NavListItem;
@@ -47,6 +48,7 @@ public class ActivityAdmin extends AppCompatActivity {
             }
         });
 
+
     }
 
 
@@ -79,6 +81,7 @@ public class ActivityAdmin extends AppCompatActivity {
             }
         });
         mDrawerList.setAdapter(adapter);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_view_admin, new HomeFragment()).commit();
 
     }
 

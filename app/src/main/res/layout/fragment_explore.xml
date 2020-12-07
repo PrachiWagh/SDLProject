@@ -1,35 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/grey"
-    android:background="@color/grey"
+    android:background="@color/white"
     tools:context=".User.Fragments.ExploreFragment">
-<androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/search_card"
-    android:layout_margin="10dp">
 
-<SearchView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/search_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="search"
-        android:id="@+id/search"
-        android:clickable="true"/>
-</androidx.cardview.widget.CardView>
+        android:layout_margin="10dp">
 
-            <!-- TODO: Update blank fragment layout -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/recyclerView"
-                android:layout_below="@+id/search_card"
-                android:background="@color/grey"
-                />
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+
+            android:queryHint="search" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/search_card" />
 
 
 </RelativeLayout>

@@ -18,10 +18,10 @@
             android:id="@+id/tab_layout"
             app:tabIndicatorFullWidth="false"
             app:tabIndicatorGravity="bottom"
-            app:tabTextColor="@color/grey"
+            app:tabTextColor="@color/Grey300"
             app:tabIndicatorHeight="2dp"
-            app:tabIndicatorColor="@color/blue"
-            app:tabSelectedTextColor="@color/blue"
+            app:tabIndicatorColor="@color/Purple500"
+            app:tabSelectedTextColor="@color/Purple500"
             />
         <androidx.viewpager.widget.ViewPager
             android:layout_height="match_parent"
@@ -31,7 +31,7 @@
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:background="@color/grey"
+        android:background="@color/white"
         android:layout_gravity="start"
         >
         <include layout="@layout/main_nav_drawer"/>

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.sdl.sdlproject.R;
 import com.sdl.sdlproject.User.Adapter.BookAdapter;
 import com.sdl.sdlproject.Model.Books;
+import com.sdl.sdlproject.User.Adapter.ExploreAdapter;
 
 import androidx.annotation.Nullable;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -27,7 +28,7 @@ public class ExploreFragment extends Fragment implements SearchView.OnQueryTextL
     SearchView searchView;
     DrawerLayout drawerLayout;
     TextView student_name;
-   public BookAdapter bookAdapter;
+   public ExploreAdapter exploreAdapter;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,8 +40,8 @@ public class ExploreFragment extends Fragment implements SearchView.OnQueryTextL
           recyclerView.setHasFixedSize(true);
         Log.d("MusicFiles", String.valueOf(booksList.size()));
         if (!(booksList.size() < 1)) {
-            bookAdapter = new BookAdapter( booksList,getContext());
-            recyclerView.setAdapter(bookAdapter);
+            exploreAdapter = new ExploreAdapter( booksList,getContext());
+            recyclerView.setAdapter(exploreAdapter);
         }
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
 
@@ -68,7 +69,7 @@ public class ExploreFragment extends Fragment implements SearchView.OnQueryTextL
                 Log.d("newbook",book.getTitle());
             }
         }
-        bookAdapter.updateBooks(newBooks);
+        exploreAdapter.updateBooks(newBooks);
         return true;
     }
 }

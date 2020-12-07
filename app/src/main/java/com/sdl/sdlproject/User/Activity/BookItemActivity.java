@@ -1,8 +1,5 @@
 package com.sdl.sdlproject.User.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -14,42 +11,46 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.sdl.sdlproject.R;
 import com.sdl.sdlproject.Model.Books;
+import com.sdl.sdlproject.R;
 
-import static com.sdl.sdlproject.User.Adapter.BookAdapter.books;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import static com.sdl.sdlproject.LoginActivity.resBooksId;
 import static com.sdl.sdlproject.LoginActivity.reservedBooks;
+import static com.sdl.sdlproject.User.Adapter.ExploreAdapter.books2;
 
 public class BookItemActivity extends AppCompatActivity {
-TextView title,author,publication,category,totalNoOfCopy,availableCopy,shelf;
-Button notify_me;
-int position1=-1;
+    TextView title, author, publication, category, totalNoOfCopy, availableCopy, shelf;
+    Button notify_me;
+    int position1 = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_item);
-        title=findViewById(R.id.detail_title);
-        author=findViewById(R.id.detail_author);
-        category=findViewById(R.id.detail_category);
-        publication=findViewById(R.id.detail_publication);
-        totalNoOfCopy=findViewById(R.id.detail_tot_copy);
-        availableCopy=findViewById(R.id.detail_avail_copy);
-        shelf=findViewById(R.id.detail_shelf);
-        notify_me=findViewById(R.id.notify_me);
-        position1=getIntent().getIntExtra("position",-1);
-        Books book_item=books.get(position1);
-        title.setText("Title: "+book_item.getTitle());
-        author.setText("Author: "+book_item.getAuthor());
-        category.setText("Category: "+book_item.getCategory());
-        publication.setText("Publication: "+book_item.getPublication());
-        totalNoOfCopy.setText("Total copies: "+book_item.getTotalCopy());
-        availableCopy.setText("Available copies: "+book_item.getAvailableCopy());
-        shelf.setText("Shelf: "+book_item.getShelf());
-        if(book_item.getAvailableCopy()==0 ){
+        title = findViewById(R.id.detail_title);
+        author = findViewById(R.id.detail_author);
+        category = findViewById(R.id.detail_category);
+        publication = findViewById(R.id.detail_publication);
+        totalNoOfCopy = findViewById(R.id.detail_tot_copy);
+        availableCopy = findViewById(R.id.detail_avail_copy);
+        shelf = findViewById(R.id.detail_shelf);
+        notify_me = findViewById(R.id.notify_me);
+        position1 = getIntent().getIntExtra("position", -1);
+        Books book_item = books2.get(position1);
+        title.setText("Title: " + book_item.getTitle());
+        author.setText("Author: " + book_item.getAuthor());
+        category.setText("Category: " + book_item.getCategory());
+        publication.setText("Publication: " + book_item.getPublication());
+        totalNoOfCopy.setText("Total copies: " + book_item.getTotalCopy());
+        availableCopy.setText("Available copies: " + book_item.getAvailableCopy());
+        shelf.setText("Shelf: " + book_item.getShelf());
+        if (book_item.getAvailableCopy() == 0) {
 
             notify_me.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             notify_me.setVisibility(View.GONE);
         }
         SharedPreferences sp = getSharedPreferences("user", MODE_PRIVATE);
@@ -58,14 +59,14 @@ int position1=-1;
         notify_me.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int flag=0;
-                for(Books book:reservedBooks){
-                    if(book_item.getTitle().equals(book.getTitle()) && book_item.getAuthor().equals(book.getAuthor())){
-                        flag=1;
+                int flag = 0;
+                for (Books book : reservedBooks) {
+                    if (book_item.getTitle().equals(book.getTitle()) && book_item.getAuthor().equals(book.getAuthor())) {
+                        flag = 1;
                         break;
                     }
                 }
-                if(flag==0) {
+                if (flag == 0) {
                     reservedBooks.add(book_item);
                     FirebaseFirestore db1 = FirebaseFirestore.getInstance();
                     db1.collection("Books").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

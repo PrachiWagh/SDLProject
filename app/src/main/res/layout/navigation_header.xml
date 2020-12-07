@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:background="@drawable/backgound"
+    android:layout_height="150dp"
+    android:background="@drawable/login_bg2"
     android:orientation="vertical">
 
     <LinearLayout
@@ -21,12 +21,12 @@
             android:orientation="horizontal"
             android:paddingStart="20dp">
 
-            <ImageView
+        <!--    <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/pictlogo"
 
-                />
+                />-->
 
             <TextView
                 android:id="@+id/name"
@@ -36,7 +36,7 @@
                 android:layout_marginTop="10dp"
                 android:singleLine="true"
                 android:text="Admin"
-                android:textColor="@color/Grey900"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
 
