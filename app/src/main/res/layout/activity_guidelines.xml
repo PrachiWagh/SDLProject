@@ -18,8 +18,7 @@
             android:layout_gravity="center"
             app:cardCornerRadius="20dp"
             app:cardBackgroundColor="@color/grey"
-            app:strokeWidth="5dp"
-            app:strokeColor="@color/Amber300"
+            app:cardElevation="15dp"
             >
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,7 +35,7 @@
                     android:layout_centerInParent="true"
                     android:fontFamily="sans-serif-medium"
                     android:text="Guidelines"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/Purple500"
                     android:textSize="24dp" />
 
             </RelativeLayout>

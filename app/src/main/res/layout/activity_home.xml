@@ -7,93 +7,102 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/grey"
     tools:context=".User.Activity.HomeActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <include layout="@layout/main_toolbar"/>
-      <androidx.cardview.widget.CardView
+
+        <include layout="@layout/main_toolbar" />
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-          android:backgroundTint="@color/white"
             android:layout_gravity="center"
-            >
+            android:layout_margin="30dp"
+            android:backgroundTint="@color/white"
+            app:cardBackgroundColor="@color/grey"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="15dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/white">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="News and Notices"
-                    android:textColor="@color/blue"
-                    android:textSize="24dp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/white">
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="News and Notices"
+                        android:textColor="@color/Purple500"
+                        android:textSize="24dp" />
+
+                </RelativeLayout>
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:src="#636465"/>
+                    android:src="#636465" />
 
                 <TextView
+                    android:id="@+id/news_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/news_text"
+                    android:layout_margin="20dp"
                     android:text="News"
-                    android:textSize="15dp"
                     android:textColor="@color/black"
-                    android:layout_margin="20dp"/>
+                    android:textSize="15dp" />
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
-<RelativeLayout
-    android:layout_width="300dp"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-   android:layout_gravity="start"
-    >
-    <include layout="@layout/main_nav_drawer"/>
 
-</RelativeLayout>
-
-   <!-- <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/navigation_header"
+        android:layout_gravity="start"
+        android:background="@color/white">
 
-        >
+        <include layout="@layout/main_nav_drawer" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    </RelativeLayout>
 
-            <include
-                layout="@layout/navigation_header"
-                android:visibility="invisible" />
+    <!-- <com.google.android.material.navigation.NavigationView
+         android:id="@+id/navigation_view"
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent"
+         android:layout_gravity="left"
+         android:fitsSystemWindows="true"
+         app:headerLayout="@layout/navigation_header"
 
-            <ListView
-                android:id="@+id/navlistview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+         >
 
-                />
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
 
-        </LinearLayout>
-    </com.google.android.material.navigation.NavigationView>
--->
+             <include
+                 layout="@layout/navigation_header"
+                 android:visibility="invisible" />
+
+             <ListView
+                 android:id="@+id/navlistview"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+
+                 />
+
+         </LinearLayout>
+     </com.google.android.material.navigation.NavigationView>
+ -->
 
 </androidx.drawerlayout.widget.DrawerLayout>

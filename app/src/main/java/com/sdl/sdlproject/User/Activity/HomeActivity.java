@@ -59,7 +59,7 @@ Spanned news= Html.fromHtml("<pre><br>\n" +
         }
     }
     public void clickHome(View view){
-        recreate();
+        redirectActivity(this, HomeActivity.class);
     }
     public void clickExplore(View view){
         redirectActivity(this, ExploreActivity.class);
@@ -87,6 +87,7 @@ Spanned news= Html.fromHtml("<pre><br>\n" +
             public void onClick(DialogInterface dialog, int which) {
 
                 redirectActivity(activity, LoginActivity.class);
+
             }
         });
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -102,7 +103,6 @@ Spanned news= Html.fromHtml("<pre><br>\n" +
         Intent intent=new Intent(activity,aclass);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
-
     }
 
     @Override

@@ -50,7 +50,7 @@
         android:text="Search"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        app:backgroundTint="@color/Teal200"
+        app:backgroundTint="@color/Purple400"
         app:cornerRadius="10dp"
         app:elevation="40dp"
         app:strokeColor="@color/Grey300"

@@ -3,35 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/white"
     android:id="@+id/profile"
     android:onClick="clickProfile"
     android:orientation="vertical">
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:id="@+id/profile_pic"
-        android:src="@drawable/ic_baseline_account_circle_24"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="180dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Student Name"
-        android:id="@+id/profile_name"
-        android:layout_marginLeft="60dp"
-        android:textSize="20dp"
-        android:textColor="#636465"
-        android:textStyle="bold"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:src="#636465"
-        android:layout_margin="20dp"/>
+
+    <include layout="@layout/navigation_header_user"/>
+
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

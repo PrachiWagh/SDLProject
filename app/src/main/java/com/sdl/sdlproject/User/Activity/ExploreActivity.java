@@ -45,7 +45,7 @@ DrawerLayout drawerLayout;
         drawerLayout.openDrawer(GravityCompat.START); }
     public void clickProfile(View view){ HomeActivity.closeDrawer(drawerLayout); }
     public void clickHome(View view){
-        HomeActivity.redirectActivity(this,HomeActivity.class);
+        HomeActivity.redirectActivity(this, HomeActivity.class);
     }
     public void clickLogout(View view){
         HomeActivity.logout(this);
@@ -53,6 +53,7 @@ DrawerLayout drawerLayout;
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("remember", "false");
         editor.apply();
+        finish();
     }
     public void clickMyBooks(View view){
         HomeActivity.redirectActivity(this, MyBooks.class);
