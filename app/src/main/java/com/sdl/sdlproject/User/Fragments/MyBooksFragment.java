@@ -40,7 +40,7 @@ import static com.sdl.sdlproject.LoginActivity.myBooksItems;
 public class MyBooksFragment extends Fragment {
     RecyclerView recyclerView1;
     TextView lateFee;
-    public static MyBookAdapter myBooksAdapter;
+    public MyBookAdapter myBooksAdapter;
     public static double late_fee;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,9 +104,12 @@ public class MyBooksFragment extends Fragment {
             });*/
 
             lateFee.setText("Late Fee: ₹"+late_fee);
-            myBooksAdapter= new MyBookAdapter(myBooksItems,getContext());
-            recyclerView1.setAdapter(myBooksAdapter);
+            Log.d("isssssssssssue",String.valueOf(myBooksItems.size()));
             recyclerView1.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+            myBooksAdapter= new MyBookAdapter(myBooksItems,getContext());
+
+            recyclerView1.setAdapter(myBooksAdapter);
+            myBooksAdapter.notifyDataSetChanged();
         }
         else {
             Toast.makeText(getContext(),"No Issued Books",Toast.LENGTH_SHORT).show();

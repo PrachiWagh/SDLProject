@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="C2K18105847"
+            android:text=""
             android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
