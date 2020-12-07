@@ -4,10 +4,8 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +15,6 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,14 +22,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.imageview.ShapeableImageView;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.sdl.sdlproject.Model.Books;
 import com.sdl.sdlproject.R;
-import com.sdl.sdlproject.User.Activity.BookItemActivity;
-import com.sdl.sdlproject.User.Adapter.BookAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,13 +37,12 @@ import java.util.Map;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import static com.sdl.sdlproject.LoginActivity.booksList;
-
 public class UpdateBookAdapter extends RecyclerView.Adapter<UpdateBookAdapter.MyViewHolder> {
 
     public ArrayList<Books> books;
     private Context mContext;
-
+    String id = "";
+    DocumentReference ref;
 
     Updatebooks updatebooks;
 
@@ -87,7 +82,7 @@ public class UpdateBookAdapter extends RecyclerView.Adapter<UpdateBookAdapter.My
         holder.book_name.setText(books.get(position).getTitle());
         holder.author_name.setText(books.get(position).getAuthor());
         holder.category.setText(books.get(position).getCategory());
-        holder.imageView.setImageDrawable(mContext.getResources().getDrawable(imageArray[position%5]));
+        holder.imageView.setImageDrawable(mContext.getResources().getDrawable(imageArray[position % 5]));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,37 +123,54 @@ public class UpdateBookAdapter extends RecyclerView.Adapter<UpdateBookAdapter.My
                 updatebtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
                         FirebaseFirestore db = FirebaseFirestore.getInstance();
-                        DocumentReference ref = db.document("Books/b" + (position + 1));
 
-                        Map<String, Object> map = new HashMap<>();
-                        map.put("title", title.getEditText().getText().toString());
-                        map.put("author", author.getEditText().getText().toString());
-                        map.put("publication", publication.getEditText().getText().toString());
-                        map.put("category", category.getText().toString());
-                        map.put("shelf", shelf.getText().toString());
-                        map.put("availableCopy", Integer.valueOf(available.getEditText().getText().toString()));
-                        map.put("totalCopy", Integer.valueOf(totalc.getEditText().getText().toString()));
-
-                        ref.update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        db.collection("Books").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
-                            public void onComplete(@NonNull Task<Void> task) {
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                            }
-                        }).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Log.d("books", "SUCCESSListener");
-                                updatebooks.updateInterface(position, map);
+                                for (QueryDocumentSnapshot snapshot : task.getResult()) {
 
-                                Toast.makeText(v.getContext(), "SUCCESSListener", Toast.LENGTH_SHORT).show();
+                                    if (snapshot.get("title").equals(title.getEditText().getText().toString())) {
+                                        id = snapshot.getId();
+                                        Log.d("iddddddd", id);
+                                        ref= db.document("Books/" + id);
+                                        Map<String, Object> map = new HashMap<>();
+                                        map.put("title", title.getEditText().getText().toString());
+                                        map.put("author", author.getEditText().getText().toString());
+                                        map.put("publication", publication.getEditText().getText().toString());
+                                        map.put("category", category.getText().toString());
+                                        map.put("shelf", shelf.getText().toString());
+                                        map.put("availableCopy", Integer.valueOf(available.getEditText().getText().toString()));
+                                        map.put("totalCopy", Integer.valueOf(totalc.getEditText().getText().toString()));
 
+                                        ref.update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+
+                                            }
+                                        }).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.d("books", "SUCCESSListener");
+                                                updatebooks.updateInterface(position, map);
+
+                                                Toast.makeText(v.getContext(), "SUCCESSListener", Toast.LENGTH_SHORT).show();
+
+                                            }
+                                        });
+                                        dialog2.cancel();
+                                        Toast.makeText(mContext, "Updated", Toast.LENGTH_SHORT).show();
+
+                                    }
+
+
+                                }
                             }
                         });
-                        dialog2.cancel();
-                        Toast.makeText(mContext, "Updated", Toast.LENGTH_SHORT).show();
-                    }
+
+
+                 }
                 });
 
                 cancelbtn.setOnClickListener(new View.OnClickListener() {
